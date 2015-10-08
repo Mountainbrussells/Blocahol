@@ -21,16 +21,25 @@
                                 <rect key="frame" x="20" y="28" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="caD-cM-gp4"/>
+                                </connections>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-9e-2fV">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-9e-2fV">
                                 <rect key="frame" x="18" y="66" width="564" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="ydi-uG-Jn0"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utp-aQ-TBz">
-                                <rect key="frame" x="257" y="104" width="87" height="45"/>
+                                <rect key="frame" x="244" y="104" width="113" height="45"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Calculate">
                                     <color key="titleColor" red="0.91372555489999996" green="0.5176470876" blue="0.26274511220000002" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e7e-1O-VbX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M80-uH-V4r">
                                 <rect key="frame" x="35" y="157" width="530" height="33"/>
@@ -40,6 +49,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="M80-uH-V4r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="1tO-Lu-Nnr"/>
                             <constraint firstItem="M80-uH-V4r" firstAttribute="top" secondItem="utp-aQ-TBz" secondAttribute="bottom" constant="8" id="22G-SW-hjf"/>
@@ -53,9 +63,22 @@
                             <constraint firstItem="utp-aQ-TBz" firstAttribute="centerX" secondItem="tz4-9e-2fV" secondAttribute="centerX" id="tAV-L3-JRv"/>
                             <constraint firstItem="tz4-9e-2fV" firstAttribute="centerX" secondItem="hj2-wJ-omO" secondAttribute="centerX" id="tEZ-qe-RfI"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="r4T-To-HSX" appends="YES" id="qia-C5-z5h"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="beerCountSlider" destination="tz4-9e-2fV" id="yEf-kD-WIH"/>
+                        <outlet property="beerPrecentTextField" destination="hj2-wJ-omO" id="uxY-eQ-sxa"/>
+                        <outlet property="resultLabel" destination="M80-uH-V4r" id="E5T-mx-XhA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="r4T-To-HSX">
+                    <connections>
+                        <action selector="tapGestureDidFire:" destination="BYZ-38-t0r" id="L0R-xw-wE5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="340" y="429"/>
         </scene>
