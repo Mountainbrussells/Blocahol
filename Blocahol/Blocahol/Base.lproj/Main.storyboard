@@ -22,24 +22,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-9e-2fV">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-9e-2fV">
                                 <rect key="frame" x="18" y="66" width="564" height="31"/>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utp-aQ-TBz">
-                                <rect key="frame" x="257" y="104" width="87" height="45"/>
+                                <rect key="frame" x="237" y="104" width="127" height="45"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Calculator">
                                     <color key="titleColor" red="0.91372555489999996" green="0.5176470876" blue="0.26274511220000002" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M80-uH-V4r">
-                                <rect key="frame" x="257" y="157" width="87" height="33"/>
+                                <rect key="frame" x="237" y="157" width="127" height="33"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="utp-aQ-TBz" firstAttribute="centerX" secondItem="tz4-9e-2fV" secondAttribute="centerX" id="3Hl-7g-TdH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hj2-wJ-omO" secondAttribute="trailing" id="8mO-kT-AJK"/>
@@ -73,9 +74,13 @@
                                 <exclude reference="tAV-L3-JRv"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2g6-aJ-dty" appends="YES" id="5q1-YX-fd4"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2g6-aJ-dty"/>
             </objects>
             <point key="canvasLocation" x="340" y="429"/>
         </scene>
