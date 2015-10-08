@@ -9,9 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *beerPrecentTextField;
-@property (weak, nonatomic) IBOutlet UISlider *beerCountSlider;
-@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+
 
 @end
 

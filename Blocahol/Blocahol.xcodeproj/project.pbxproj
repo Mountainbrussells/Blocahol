@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		C9E2B8971BC6BF0300123B55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E2B8961BC6BF0300123B55 /* main.m */; };
 		C9E2B89A1BC6BF0300123B55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E2B8991BC6BF0300123B55 /* AppDelegate.m */; };
-		C9E2B89D1BC6BF0300123B55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E2B89C1BC6BF0300123B55 /* ViewController.m */; };
 		C9E2B8A01BC6BF0300123B55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9E2B89E1BC6BF0300123B55 /* Main.storyboard */; };
 		C9E2B8A21BC6BF0300123B55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9E2B8A11BC6BF0300123B55 /* Assets.xcassets */; };
 		C9E2B8A51BC6BF0300123B55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9E2B8A31BC6BF0300123B55 /* LaunchScreen.storyboard */; };
+		C9E2B8AD1BC6D7CB00123B55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E2B8AC1BC6D7CB00123B55 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C9E2B8B01BC6D84300123B55 /* whiskeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E2B8AF1BC6D84300123B55 /* whiskeyViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +22,13 @@
 		C9E2B8981BC6BF0300123B55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C9E2B8991BC6BF0300123B55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C9E2B89B1BC6BF0300123B55 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C9E2B89C1BC6BF0300123B55 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C9E2B89F1BC6BF0300123B55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9E2B8A11BC6BF0300123B55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9E2B8A41BC6BF0300123B55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9E2B8A61BC6BF0300123B55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9E2B8AC1BC6D7CB00123B55 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C9E2B8AE1BC6D84300123B55 /* whiskeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = whiskeyViewController.h; sourceTree = "<group>"; };
+		C9E2B8AF1BC6D84300123B55 /* whiskeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = whiskeyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +64,9 @@
 				C9E2B8981BC6BF0300123B55 /* AppDelegate.h */,
 				C9E2B8991BC6BF0300123B55 /* AppDelegate.m */,
 				C9E2B89B1BC6BF0300123B55 /* ViewController.h */,
-				C9E2B89C1BC6BF0300123B55 /* ViewController.m */,
+				C9E2B8AC1BC6D7CB00123B55 /* ViewController.m */,
+				C9E2B8AE1BC6D84300123B55 /* whiskeyViewController.h */,
+				C9E2B8AF1BC6D84300123B55 /* whiskeyViewController.m */,
 				C9E2B89E1BC6BF0300123B55 /* Main.storyboard */,
 				C9E2B8A11BC6BF0300123B55 /* Assets.xcassets */,
 				C9E2B8A31BC6BF0300123B55 /* LaunchScreen.storyboard */,
@@ -149,7 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9E2B89D1BC6BF0300123B55 /* ViewController.m in Sources */,
+				C9E2B8AD1BC6D7CB00123B55 /* ViewController.m in Sources */,
+				C9E2B8B01BC6D84300123B55 /* whiskeyViewController.m in Sources */,
 				C9E2B89A1BC6BF0300123B55 /* AppDelegate.m in Sources */,
 				C9E2B8971BC6BF0300123B55 /* main.m in Sources */,
 			);
