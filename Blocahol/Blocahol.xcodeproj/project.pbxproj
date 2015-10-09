@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9023E981BC80A660016B0E2 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9023E971BC80A660016B0E2 /* MainMenuViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C9E2B8971BC6BF0300123B55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E2B8961BC6BF0300123B55 /* main.m */; };
 		C9E2B89A1BC6BF0300123B55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E2B8991BC6BF0300123B55 /* AppDelegate.m */; };
 		C9E2B8A01BC6BF0300123B55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9E2B89E1BC6BF0300123B55 /* Main.storyboard */; };
@@ -18,8 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C9023E961BC80A660016B0E2 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
-		C9023E971BC80A660016B0E2 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		C9E2B8921BC6BF0300123B55 /* Blocahol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocahol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E2B8961BC6BF0300123B55 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C9E2B8981BC6BF0300123B55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,8 +65,6 @@
 				C9E2B8991BC6BF0300123B55 /* AppDelegate.m */,
 				C9E2B89B1BC6BF0300123B55 /* ViewController.h */,
 				C9E2B8AC1BC6D7CB00123B55 /* ViewController.m */,
-				C9023E961BC80A660016B0E2 /* MainMenuViewController.h */,
-				C9023E971BC80A660016B0E2 /* MainMenuViewController.m */,
 				C9E2B8AE1BC6D84300123B55 /* whiskeyViewController.h */,
 				C9E2B8AF1BC6D84300123B55 /* whiskeyViewController.m */,
 				C9E2B89E1BC6BF0300123B55 /* Main.storyboard */,
@@ -163,7 +158,6 @@
 				C9E2B8B01BC6D84300123B55 /* whiskeyViewController.m in Sources */,
 				C9E2B89A1BC6BF0300123B55 /* AppDelegate.m in Sources */,
 				C9E2B8971BC6BF0300123B55 /* main.m in Sources */,
-				C9023E981BC80A660016B0E2 /* MainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,6 +39,7 @@
     
     NSLog(@"Slider value changed to %f", [sender value]);
     [self.beerPrecentTextField resignFirstResponder];
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) sender.value]];
     
     
 }
