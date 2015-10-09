@@ -40,6 +40,32 @@
     NSLog(@"Slider value changed to %f", [sender value]);
     [self.beerPrecentTextField resignFirstResponder];
     
+    // first, caculate how much alcohol is in all those beers...
+    NSInteger numberOfBeers = sender.value;
+    NSLog(@"%f", sender.value);
+    NSInteger ouncesInOneBeerGlass = 12; // assume they are 12 oz beeer bottles
+    float alcoholPercentageOfBeer = [self.beerPrecentTextField.text floatValue] / 100;
+    float ouncesOfAlcoholperBeer = ouncesInOneBeerGlass * alcoholPercentageOfBeer;
+    float ouncesOfAlcoholTotal = ouncesOfAlcoholperBeer * numberOfBeers;
+    
+    // now, calculate the equivilant amount of wine...
+    float ouncesInOneWineGlass = 5;  // wine glasses are usually 5oz
+    float alcoholPercentageOfWine = 0.13; // 13% is average
+    float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
+    float numberofWineGlassForEquivilantAmountOfAlcohol = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
+    
+    NSString *wineText;
+    if (numberofWineGlassForEquivilantAmountOfAlcohol == 1){
+        wineText = NSLocalizedString(@"glass", @"singular glass");
+    } else {
+        wineText = NSLocalizedString(@"glasses", @"plural of glass");
+    }
+    
+    NSString *titleString = [NSString stringWithFormat:NSLocalizedString(@"Wine(%.1f %@)", nil), numberofWineGlassForEquivilantAmountOfAlcohol, wineText];
+    NSLog(@"%@", titleString);
+    
+    self.navigationItem.title = titleString;
+    
     
 }
 - (IBAction)ButtonPressed:(UIButton*)sender {
