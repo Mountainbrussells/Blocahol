@@ -39,7 +39,22 @@
     
     NSLog(@"Slider value changed to %f", [sender value]);
     [self.beerPrecentTextField resignFirstResponder];
-    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) sender.value]];
+    
+    NSInteger numberOfBeers = sender.value;
+    NSLog(@"%f", sender.value);
+    NSInteger ouncesInOneBeerGlass = 12; // assume they are 12 oz beeer bottles
+    float alcoholPercentageOfBeer = [self.beerPrecentTextField.text floatValue] / 100;
+    float ouncesOfAlcoholperBeer = ouncesInOneBeerGlass * alcoholPercentageOfBeer;
+    float ouncesOfAlcoholTotal = ouncesOfAlcoholperBeer * numberOfBeers;
+    
+    // now, calculate the equivilant amount of wine...
+    float ouncesInOneWineGlass = 5;  // wine glasses are usually 5oz
+    float alcoholPercentageOfWine = 0.13; // 13% is average
+    float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
+    float numberofWineGlassForEquivilantAmountOfAlcohol = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
+    
+    NSInteger wholeNumber = ceilf(numberofWineGlassForEquivilantAmountOfAlcohol);
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%ld", (long)wholeNumber]];
     
     
 }
@@ -59,7 +74,7 @@
     float alcoholPercentageOfWine = 0.13; // 13% is average
     float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
     float numberofWineGlassForEquivilantAmountOfAlcohol = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
-    
+    NSInteger wholeNumber = ceilf(numberofWineGlassForEquivilantAmountOfAlcohol);
     
     // decide whether to use "beer"/"beers" and "glass"/"glasses"
     NSString *beerText;
@@ -77,7 +92,7 @@
     }
     
     // generate the result text, and display it on the label
-    NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.1f %@ of wine", nil), numberOfBeers, beerText, [self.beerPrecentTextField.text floatValue], numberofWineGlassForEquivilantAmountOfAlcohol, wineText];
+    NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %ld %@ of wine", nil), numberOfBeers, beerText, [self.beerPrecentTextField.text floatValue], (long)wholeNumber, wineText];
     self.resultLabel.text = resultText;
     
 }
