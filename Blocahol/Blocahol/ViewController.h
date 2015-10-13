@@ -14,6 +14,15 @@
 @property (weak, nonatomic) IBOutlet UISlider *beerCountSlider;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
+
+// Using these methods any child class will automatically update ButtonPressed: and SliderValueDidChange:.  No need to override them.
+- (NSInteger) ouncesPerGlass;
+- (CGFloat) alcoholPercentage;
+
+- (NSString *) beverageToCompare;
+- (NSString *) singularNoun;
+- (NSString *) pluralNoun;
+
 - (IBAction)ButtonPressed:(UIButton*)sender;
 
 @end

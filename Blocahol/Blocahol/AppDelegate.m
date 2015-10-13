@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    ViewController *vc = [[ViewController alloc] init];
+    
+    vc.beerPrecentTextField = nil;
+    [vc setBeerPrecentTextField:nil];
+    
+    NSLog(@"%@", vc.beerPrecentTextField);
+    NSLog(@"%@", [vc beerPrecentTextField]);
+    
+    
     return YES;
 }
 

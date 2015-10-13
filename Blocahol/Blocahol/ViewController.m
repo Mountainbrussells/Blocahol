@@ -35,25 +35,58 @@
     
 }
 
+- (NSInteger) ouncesPerGlass
+{
+    return 5;
+}
+- (CGFloat) alcoholPercentage
+{
+    return 0.13;
+}
+
+- (NSString *) singularNoun
+{
+    return NSLocalizedString(@"glass", @"singular glass");
+}
+- (NSString *) pluralNoun
+{
+    return NSLocalizedString(@"glasses", @"plural of glass");
+}
+
+- (NSString *) beverageToCompare
+{
+    return @"wine";
+}
+
+- (NSInteger) calculateConversionWithNumberOfBeers:(NSInteger) numberOfBeers andAlcoholByVolume:(CGFloat) percentage {
+    
+//    NSLog(@"%f", sender.value);
+    NSInteger ouncesInOneBeerGlass = 12; // assume they are 12 oz beeer bottles
+    float alcoholPercentageOfBeer = percentage / 100;
+    float ouncesOfAlcoholperBeer = ouncesInOneBeerGlass * alcoholPercentageOfBeer;
+    float ouncesOfAlcoholTotal = ouncesOfAlcoholperBeer * numberOfBeers;
+    
+    // now, calculate the equivilant amount of wine...
+    float ouncesInOneWineGlass = [self ouncesPerGlass];
+    float alcoholPercentageOfWine = [self alcoholPercentage];
+    float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
+    float numberofWineGlassForEquivilantAmountOfAlcohol = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
+    
+    NSInteger wholeNumber = ceilf(numberofWineGlassForEquivilantAmountOfAlcohol);
+    
+    return wholeNumber;
+}
+
 - (IBAction)sliderValueDidChange:(UISlider*)sender {
     
     NSLog(@"Slider value changed to %f", [sender value]);
     [self.beerPrecentTextField resignFirstResponder];
     
-    NSInteger numberOfBeers = sender.value;
-    NSLog(@"%f", sender.value);
-    NSInteger ouncesInOneBeerGlass = 12; // assume they are 12 oz beeer bottles
-    float alcoholPercentageOfBeer = [self.beerPrecentTextField.text floatValue] / 100;
-    float ouncesOfAlcoholperBeer = ouncesInOneBeerGlass * alcoholPercentageOfBeer;
-    float ouncesOfAlcoholTotal = ouncesOfAlcoholperBeer * numberOfBeers;
+    NSInteger numberOfBeers = (NSInteger)[sender value];
+    CGFloat percentage = [self.beerPrecentTextField.text floatValue];
     
-    // now, calculate the equivilant amount of wine...
-    float ouncesInOneWineGlass = 5;  // wine glasses are usually 5oz
-    float alcoholPercentageOfWine = 0.13; // 13% is average
-    float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
-    float numberofWineGlassForEquivilantAmountOfAlcohol = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
+    NSInteger wholeNumber = [self calculateConversionWithNumberOfBeers:numberOfBeers andAlcoholByVolume:percentage];
     
-    NSInteger wholeNumber = ceilf(numberofWineGlassForEquivilantAmountOfAlcohol);
     [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%ld", (long)wholeNumber]];
     
     
@@ -62,19 +95,12 @@
     
     [self.beerPrecentTextField resignFirstResponder];
     
-    // first, caculate how much alcohol is in all those beers...
-    NSInteger numberOfBeers = self.beerCountSlider.value;
-    NSInteger ouncesInOneBeerGlass = 12; // assume they are 12 oz beeer bottles
-    float alcoholPercentageOfBeer = [self.beerPrecentTextField.text floatValue] / 100;
-    float ouncesOfAlcoholperBeer = ouncesInOneBeerGlass * alcoholPercentageOfBeer;
-    float ouncesOfAlcoholTotal = ouncesOfAlcoholperBeer * numberOfBeers;
+    NSInteger numberOfBeers = (NSInteger)self.beerCountSlider.value;
+    CGFloat percentage = [self.beerPrecentTextField.text floatValue];
+    NSString *beverageToCompare = [self beverageToCompare];
     
-    // now, calculate the equivilant amount of wine...
-    float ouncesInOneWineGlass = 5;  // wine glasses are usually 5oz
-    float alcoholPercentageOfWine = 0.13; // 13% is average
-    float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
-    float numberofWineGlassForEquivilantAmountOfAlcohol = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
-    NSInteger wholeNumber = ceilf(numberofWineGlassForEquivilantAmountOfAlcohol);
+    NSInteger wholeNumber = [self calculateConversionWithNumberOfBeers:numberOfBeers andAlcoholByVolume:percentage];
+  
     
     // decide whether to use "beer"/"beers" and "glass"/"glasses"
     NSString *beerText;
@@ -85,14 +111,14 @@
     }
     
     NSString *wineText;
-    if (numberofWineGlassForEquivilantAmountOfAlcohol == 1){
-        wineText = NSLocalizedString(@"glass", @"singular glass");
+    if (wholeNumber == 1){
+        wineText = [self singularNoun];
     } else {
-        wineText = NSLocalizedString(@"glasses", @"plural of glass");
+        wineText = [self pluralNoun];
     }
     
     // generate the result text, and display it on the label
-    NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %ld %@ of wine", nil), numberOfBeers, beerText, [self.beerPrecentTextField.text floatValue], (long)wholeNumber, wineText];
+    NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %ld %@ of %@", nil), numberOfBeers, beerText, [self.beerPrecentTextField.text floatValue], (long)wholeNumber, wineText, beverageToCompare];
     self.resultLabel.text = resultText;
     
 }
